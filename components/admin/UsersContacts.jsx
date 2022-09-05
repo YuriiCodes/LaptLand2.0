@@ -3,7 +3,7 @@ import {Storage} from 'aws-amplify'
 import {ContactBlock} from './ContactBlock';
 
 import { DataStore } from '@aws-amplify/datastore';
-import {Contact} from "../../models";
+import {Contact} from "../../src/models";
 
 
 // We use Client Side Rendering on admin tab even though we are building on top of Next.js to be able to fetch data
