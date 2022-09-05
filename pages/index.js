@@ -2,7 +2,23 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+import { DataStore } from '@aws-amplify/datastore';
+import {useEffect} from "react";
+import {Contact} from "../src/models";
+import {Amplify} from "aws-amplify";
+import awsExports from "../src/aws-exports";
+Amplify.configure({ ...awsExports, ssr: true });
+
+
 export default function Home() {
+ useEffect( () => {
+   async function fetchUsers() {
+     const models = await DataStore.query(Contact);
+     console.log(models);
+   }
+   fetchUsers();
+ }, [])
+
   return (
     <div className={styles.container}>
       <Head>
