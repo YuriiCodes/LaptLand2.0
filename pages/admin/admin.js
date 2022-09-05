@@ -5,8 +5,8 @@ import '@aws-amplify/ui-react/styles.css';
 Amplify.configure(awsExports);
 
 import {Auth} from 'aws-amplify';
-import {UsersContacts} from "../components/admin/UsersContacts";
-import awsExports from "../src/aws-exports";
+import {UsersContacts} from "../../components/admin/UsersContacts";
+import awsExports from "../../src/aws-exports";
 
 async function signOut() {
     try {
